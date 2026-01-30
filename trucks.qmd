@@ -1,0 +1,14 @@
+---
+title: "trucks"
+author: "Chingiz Rabdanov"
+format: html
+editor: visual
+---
+
+#approach
+
+This dataset contains a lot of information about the trucking and logistics business. I believe it could be used to research which trucks are most fuel-efficient, which trips are most expensive, and which customers pay the most. After researching this information, we can develop a future business plan to upgrade our strategy.
+
+## Compairing fleet,trucks in US
+
+https://www.kaggle.com/datasets/yogape/logistics-operations-database?select=DATABASE_SCHEMA.txt.
