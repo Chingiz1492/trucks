@@ -1,0 +1,58 @@
+---
+title: "trucks data"
+author: "chingiz rabdanov"
+date: "2026-02-02"
+output: html_document
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+#step 1 Get Tools
+
+#Load packages to help with data and visualisation
+
+library(tidyverse) library(gt)
+
+#step 2 Load Dataset
+
+#Download the file from GitHub
+
+url
+\<-"<https://raw.githubusercontent.com/Chingiz1492/trucks/main/trucks.csv>"
+trucks \<- read_csv(url)
+
+#Show the first 5 lines in a table
+
+trucks %\>% head(5) %\>% gt() %\>% tab_header(title = "First 5 Rows of
+Data")
+
+#step 3 Change Data
+
+# Create a new group called 'era' based on 'model_year'
+
+# If year is before 2010 -\> Classic. If 2010 or later -\> Modern.
+
+trucks_analysis \<- trucks %\>% mutate(era = if_else(model_year \< 2010,
+"Classic", "Modern")) %\>% filter(!is.na(model_year)) \# Delete rows
+with empty years
+
+#step 4: Make a Graphic
+
+# Draw a bar chart using our new 'era' groups
+
+ggplot(trucks_analysis, aes(x = model_year, fill = era)) + geom_bar() +
+theme_minimal() + labs( title = "Trucks by Year", x = "Year", y =
+"Count", fill = "Group" )
+
+# --- STEP 5: Checking
+
+# Print a message to show everything is done
+
+print("Success! Dataset is ready.")
